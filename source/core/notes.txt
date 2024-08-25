@@ -1,0 +1,42 @@
+I'm really unhappy with the code that implements a hook.  It's just plain ugly!
+If anyone has a better suggestion, I'm (as 'they' say) "all ears"
+
+Efnet/wiidev
+<BlueChip> Is this the right place to find someone who understands the GX calls?
+           If so, I have a texture which I want to display - but I want to draw
+           it such that every which is opaque is reduced to black and opacity is
+           multiplied by (0 < N <= 1) ...I think it should be possible via GX,
+           but I really don't know how
+<BlueChip> *every pixel
+<+comex>   BlueChip_: what?
+<BlueChip> i have a texture with a colourful square on it with a hole in the
+           middle ...I wish to display it but every colour must be black and
+           opacity must be changed by a factor
+<rewt``>   ala wallhack?
+<BlueChip> is that at me?
+<rewt``>   yes
+<BlueChip> googling "wallhack"...
+<+comex>   http://www.amnoid.de/gc/tev.html
+<BlueChip> I'm actually generating a 2d drop-shadow, but I guess it is no
+           dissimilar to a wallhack
+<rewt``>   it's a term in gaming where they use a hack to turn walls translucent
+           to see enemies behind the walls
+<+comex>   it's probably a trivial application of that
+<BlueChip> comex: can you suggest which part of that page would be the most
+           helpful bit for me?
+<+comex>   from libogc's GX_SetTevOp
+
+<+comex>   GX_SetTevColorOp(tevstage,GX_TEV_ADD,GX_TB_ZERO,GX_CS_SCALE_1,GX_TRUE,GX_TEVPREV);
+<rewt``>   BlueChip_, look for "alpha"
+<BlueChip> thanks, I will read and try to understand :)
+<rewt``>   that's the opacity/translucency setting
+<+comex>   or just
+<+comex>   case GX_REPLACE:
+<+comex>   GX_SetTevColorIn(tevstage,GX_CC_ZERO,GX_CC_ZERO,GX_CC_ZERO,GX_CC_TEXC);
+<+comex>   change the last one to GX_CC_ZERO
+<BlueChip> Thanks guys.  I'm gonna get a cuppa and set to work /now/ :)
+<+comex>   and modify the alphain after that so that you get the multiplication you want
+
+<BlueChip> I'm very new to the likes of GX (DX/GL/etc) ...so I could be a while,
+           whilst I make sure I not only do this, but understand it too :) ...
+           speak soon

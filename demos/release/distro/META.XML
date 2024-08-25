@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<app version="1">
+  <name>WiiFont Release Demo</name>
+  <coder>BlueChip, Cyborg Systems</coder>
+  <version>1.1</version>
+  <release_date>20090918200000</release_date>
+  <short_description>WiiFont Release Demo</short_description>
+  <long_description>A quick demo to WiiFont in action
+
+WiiFont is a free (as in free) font library for the Wii.
+Taking only 13KB of RAM (not the 2MB required by FreeType).
+Full colour animated fonts can be added to your apps and games in minutes.
+For more information, watch the demo and/or read the source code.
+
+Greetz to:
+The GRRLIB Team - for their 2D Graphics Library
+WitchLord - for his Font Generator
+WinterMute - for devKitPro
+200904262000</long_description>
+</app>
